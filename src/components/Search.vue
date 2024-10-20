@@ -65,6 +65,7 @@ export default {
   },
   methods: {
     async apply() {
+      // 여기서 사용한 movie 이름이 store/index.js 모듈에 등록한 movie 이다.
       await this.$store.dispatch('movie/searchMovies', {
         // payload
         title: this.title,
