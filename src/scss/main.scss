@@ -1,0 +1,27 @@
+// Default variable overrides
+// $body-bg: #000;
+// $body-color: #111;
+$primary: #FDC000;
+$container-max-widths: (
+  sm: 540px,
+  md: 704px,
+  lg: 924px,
+  xl: 1140px,
+  xxl: 1364px
+);
+
+// Required
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/variables-dark";
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/root";
+
+// Optional Bootstrap components here
+@import "../../node_modules/bootstrap/scss/reboot";
+@import "../../node_modules/bootstrap/scss/type";
+// etc
+
+// 위 수정을 기반으로 최종 구성한다.
+@import "../../node_modules/bootstrap/scss/bootstrap"
