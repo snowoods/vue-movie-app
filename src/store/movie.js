@@ -109,10 +109,10 @@ export default {
             })
           }
         }
-      } catch(errMsg) {
+      } catch({ message }) { // 로컬 람다는 원격 값이므로 에러 객체로 넘어온다.
         commit('updateState', {
           movies: [],
-          message: errMsg
+          message
         })
       } finally {
         commit('updateState', {
@@ -147,25 +147,27 @@ export default {
   }
 }
 
-function _fetchMovie(payload) {
-  const { title, type, year, page, id } = payload
-  const OMDB_API_KEY = '18372ba4'
-  const url = id 
-  ? `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&i=${id}`
-  : `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&s=${title}&type=${type}&y=${year}&page=${page}`
+async function _fetchMovie(payload) {
+  return await axios.post('/.netlify/functions/movie', payload)  // 람다 호출
 
-  return new Promise((resolve, reject) => {
-    axios.get(url)
-      .then((res) => {
-        // console.log(res)
-        // 정상 결과에 에러 메시지가 나올 수 있다.
-        if (res.data.Error) {
-          reject(res.data.Error)
-        }
-        resolve(res)
-      })
-      .catch(err => {
-        reject(err.message) // axios.get 에러 발생하면 javascript error 객체 전달.
-      })
-  })
+  // const { title, type, year, page, id } = payload
+  // const OMDB_API_KEY = '18372ba4'
+  // const url = id 
+  // ? `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&i=${id}`
+  // : `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&s=${title}&type=${type}&y=${year}&page=${page}`
+
+  // return new Promise((resolve, reject) => {
+  //   axios.get(url)
+  //     .then((res) => {
+  //       // console.log(res)
+  //       // 정상 결과에 에러 메시지가 나올 수 있다.
+  //       if (res.data.Error) {
+  //         reject(res.data.Error)
+  //       }
+  //       resolve(res)
+  //     })
+  //     .catch(err => {
+  //       reject(err.message) // axios.get 에러 발생하면 javascript error 객체 전달.
+  //     })
+  // })
 }    
