@@ -8,6 +8,7 @@ const path = _require('path')
 const HtmlPlugin = _require('html-webpack-plugin')
 const CopyPlugin = _require('copy-webpack-plugin')
 const {VueLoaderPlugin} = _require('vue-loader')
+const Dotenv = require('dotenv-webpack')
 
 // export
 module.exports = {
@@ -77,7 +78,8 @@ module.exports = {
         { from: 'static'} // 개발/배포용 리소스 디렉토리 static 에서 배포 디렉토리 dist 로 복사.
       ]
     }),
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    new Dotenv()
   ],
 
   // DEV
