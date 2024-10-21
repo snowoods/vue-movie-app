@@ -45,7 +45,13 @@ module.exports = {
           'style-loader', // 3. index.html에 style 태그로 삽입
           'css-loader',    // 2. css-loader로 javascript에서 css 해석
           'postcss-loader', // 1. postcss-loader로 공급 업체 접두사 적용 및 postcss 플러그인 사용
-          'sass-loader' // 0. main.scss 내용을 sass-loader로 해석
+          // 'sass-loader' // 0. main.scss 내용을 sass-loader로 해석
+          {
+            loader: 'sass-loader',
+            options: {
+              additionalData: '@import "~/scss/main";'
+            }
+          }
         ]
       },
       {
