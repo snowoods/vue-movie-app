@@ -4,5 +4,4 @@ Webpack template
  - Autoprefixer
  - Vue3
 
-사이트 접속
-https://snowoods-movie.netlify.app/
+<a href="https://snowoods-movie.netlify.app/" target="_blank" style="text-decoration: none;">OMDb API 영화 검색</a>
