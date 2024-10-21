@@ -72,6 +72,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import Loader from '~/components/Loader'
 
 export default {
@@ -84,21 +85,28 @@ export default {
     }
   },
   computed: {
-    theMovie() {
-      return this.$store.state.movie.theMovie
-    },
-    loading() {
-      return this.$store.state.movie.loading
-    }
+    ...mapState('movie', [
+      'theMovie',
+      'loading'
+    ])
   },
   created() {
-    // console.log(this.$route)
+    // 직접 호출이 직관적이다.
     this.$store.dispatch('movie/searchMovieWithId', {
       // movie/tt123456
-      id: this.$route.params.id
+      id: this.$route.params.id // payload
     })
+
+    // mapActions를 봐야 호출 대상을 확인 할 수 있다.
+    // this.searchMovieWithId({
+    //   // movie/tt123456
+    //   id: this.$route.params.id // payload
+    // })
   },
   methods: {
+    // ...mapActions('movie', [
+    //   'searchMovieWithId'
+    // ]),
     requestDiffSizeImage(url, size = 700) {
       if (!url | url === 'N/A') {
         this.imageLoading = false
