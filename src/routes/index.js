@@ -10,6 +10,11 @@ export default createRouter({
     // ex) https://google.com/#/search
     history: createWebHashHistory(),
 
+    // 스크롤이 항상 최상단을 유지한 상태에서 페이지 전환
+    scrollBehavior() {
+        return { top: 0 }
+    },
+
     // pages
     routes: [
         {
