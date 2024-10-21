@@ -16,11 +16,11 @@ export default {
       type: Number,
       default: 2
     },
-    absolute: {
+    absolute: { // 부모요소 기준의 가운데 배치
       type: Boolean,
       default: false
     },
-    fixed: {
+    fixed: { // 뷰포트 기준의 가운데 배치
       type: Boolean,
       default: false
     },
