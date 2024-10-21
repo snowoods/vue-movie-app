@@ -86,7 +86,7 @@ module.exports = {
   devServer: {
     host: 'localhost', // 개발 서버 주소
     compress: false, // gzip 압축
-    port: 8080,
+    port: 8079,
     hot: true, // HMR(Hot Module Replacement) 활성화 (실시간 갱신)
   }
 }

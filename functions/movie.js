@@ -3,7 +3,7 @@ const { OMDB_API_KEY } = process.env
 
 exports.handler = async function (event, context) {
   // console.log(event)
-  console.log(context)
+  // console.log(context)
   const payload = JSON.parse(event.body)
   const { title, type, year, page, id } = payload
   const url = id 
