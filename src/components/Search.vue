@@ -79,6 +79,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '~/scss/main';
+
 .container {
   display: flex;
   > * { // 전체 선택자
@@ -104,4 +106,23 @@ export default {
     font-weight: 700;
     flex-shrink: 0; // 감소 비율 : 0이므로 다른 조정 가능한 컴포넌트가 줄어 든다. ex) Input
   }
-}</style>
+
+  @include media-breakpoint-down(lg) {
+    display: block; // 기존 수평 배치(flex)에서 수직(block)으로 변경
+    input {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+    .selects {
+      margin-right: 0;
+      margin-bottom: 10px;      
+      select {
+        width: 100%;
+      }
+    }
+    .btn {
+      width: 100%
+    }
+  }
+}
+</style>
