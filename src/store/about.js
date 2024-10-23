@@ -10,6 +10,6 @@ export default {
     email: 'nbc@snowoods.com',
     blog: 'https://codeself.com',
     phone: '+81-10-1234-5678',
-    image: 'https://img1.daumcdn.net/thumb/C360x360/?scode=mtistory2&fname=https%3A%2F%2Ftistory1.daumcdn.net%2Ftistory%2F939805%2Fattach%2F4309f9d1a59f4d1db1561cf88133c6f0'
+    image: 'https://tistory1.daumcdn.net/tistory/939805/skin/images/logo-man.png'
   })
 }
