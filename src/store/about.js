@@ -7,7 +7,7 @@ export default {
   // --> 매번 메모리에 할당하여 리턴하기 때문에 참조형 데이터타입이라도 고유 데이터에 접근한다.
   state: () => ({
     name: 'SNOWOODS',
-    email: 'nbc@snowoods.com',
+    email: 'support@snowoods.com',
     blog: 'https://codeself.com',
     phone: '+81-10-1234-5678',
     image: 'https://tistory1.daumcdn.net/tistory/939805/skin/images/logo-man.png'
